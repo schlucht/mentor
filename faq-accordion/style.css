@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--light-pink);
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+header {
+
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+
+    @media (max-width: 375px) {
+        background-image: url(./assets/images/background-pattern-mobile.svg);
+        background-size: cover;
+    }
+}
+
+.img-star {
+    height: 3.0rem;
+}
+
+.img-plus,
+.img-minus {
+    height: 1.5rem;
+}
+
+.img-minus {
+    display: none;
+}
+
+.card {
+    position: absolute;
+    background-color: var(--white);
+    max-width: 45rem;
+    left: 50%;
+    translate: -50%;
+    top: 15rem;
+    border-radius: 1.5rem;
+    padding: 2.5rem 3.5rem;
+    margin-bottom: 2rem;
+   
+}
+
+.card-title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 2rem;
+
+    & img {
+        width: 3rem;
+    }
+
+    & h2 {
+        font-size: 4.3rem;
+    }
+}
+
+.card-body {
+    & details {
+        & summary {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-purple);
+            cursor: pointer;
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+
+            &::after {
+                content: '+';
+                display: inline-block;
+                width: 1.5rem;
+                height: 1.5rem;
+                background-color: #ad28eb;
+                border-radius: 50%;
+                color: white;
+                text-align: center;
+            }
+
+            &~p {
+                font-size: 1.2rem;
+                color: var(--dark-purple);
+            }
+        }
+    }
+}
+
+details[open] summary::after {
+    content: "-";
+    background-color: black;
+
+}
