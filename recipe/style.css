@@ -1,0 +1,158 @@
+:root {
+    --Nutmeg: hsl(14, 45%, 36%);
+    --Dark-Raspberry: hsl(332, 51%, 32%);
+    --White: hsl(0, 0%, 100%);
+    --Rose-White: hsl(330, 100%, 98%);
+    --Eggshell: hsl(30, 54%, 90%);
+    --Light-Grey: hsl(30, 18%, 87%);
+    --Wenge-Brown: hsl(30, 10%, 34%);
+    --Dar-Charcoal: hsl(24, 5%, 18%);
+}
+
+/* - Family: [Young Serif](https://fonts.google.com/specimen/Young+Serif)
+- Weights: 400
+
+- Family: [Outfit](https://fonts.google.com/specimen/Outfit)
+- Weights: 400, 600, 700 */
+
+@font-face {
+    font-family: young;
+    src: url('asstes/fonts/YoungSerif-Regular.ttf');
+}
+
+@font-face {
+    font-family: outfit-regular;
+    src: url('assets/fonts/outfit/Outfit-VariableFont_wght.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'outfit-regular', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--Wenge-Brown);
+    background-color: var(--Eggshell);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+    flex-direction: column;
+
+    @media screen and (max-width: 375px) {        
+        padding: 0;
+        margin: 0;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'young', serif;
+    font-weight: 700;
+    color: var(--Wenge-Brown);
+}
+
+h1 {
+    color: var(--Dar-Charcoal);
+}
+
+h3 {
+    color: var(--Dark-Raspberry);
+}
+
+h2 {
+    color: var(--Nutmeg);
+}
+
+img {
+    width: calc(100% - 4rem);
+    height: auto;
+    display: block;
+    border-radius: 1rem;
+    margin: 2rem;
+
+    @media screen and (max-width: 375px) {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+main {
+    background-color: var(--White);
+    max-width: 70rem;
+    min-width: 37.5rem;
+    border-radius: 1.5rem;
+}
+
+li {
+    padding-left: 1rem;
+}
+h1 {
+    font-size: 3.2rem;
+    margin: 1rem 2rem ;
+}
+h1~p {
+    color: var(--Wenge-Brown);
+    line-height: 1.5;
+    margin: 2rem;
+}
+
+article {
+    margin: 2rem 2rem;
+    background-color: var(--Rose-White);
+    padding: 2rem;
+
+    ul {
+        padding-left: 2rem;
+
+        li::marker {
+            color: var(--Dark-Raspberry);
+        }
+    }
+}
+
+section {
+    margin: 4rem 2rem;
+
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    ul,
+    ol {
+        margin-bottom: 2rem;
+        padding-left: 2rem;
+
+        li::marker {
+            color: var(--Nutmeg);
+        }
+    }
+}
+
+table {
+    margin-top: 2rem;
+    width: 100%;
+    border-collapse: collapse;
+  
+    td {
+        border-bottom: 1px solid var(--Light-Grey);
+        padding: 0.6rem 2rem;
+
+    }
+
+    td:last-child {
+        color: var(--Nutmeg)
+    }
+}
