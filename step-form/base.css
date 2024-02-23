@@ -1,0 +1,131 @@
+:root {
+
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
+    --Cool-gray: hsl(231, 11%, 63%);
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+
+    --font-family-bold: 'ubuntu-bold', sans-serif;
+    --font-family-regular: 'ubuntu-regular', sans-serif;
+    --font-family-medium: 'ubuntu-medium', sans-serif;
+    --font-weight: 400;
+    --font-size: 1.6rem;
+
+    --p: 2rem;
+
+}
+
+@font-face {
+    font-family: 'ubuntu-bold';
+    src: url('assets/fonts/Ubuntu-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'ubuntu-regular';
+    src: url('assets/fonts/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'ubuntu-medium';
+    src: url('assets/fonts/Ubuntu-Medium.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: var(--font-size);
+    font-family: var(--font-family-regular);
+    line-height: 1.6;
+    font-weight: var(--font-weight);
+    color: var(--Marine-blue);
+    background-color: var(--Pastel-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-bold);
+    font-weight: var(--font-weight);
+}
+
+h1 {
+    font-family: var(--font-family-bold);
+    font-size: 3.2rem;
+    color: var(--Marine-blue);
+    padding-bottom: 2rem;
+}
+
+h1>p {
+    padding: 0;
+    margin: 0;
+    color: var(--Cool-gray);
+    font-size: 1.6rem;
+    font-family: var(--font-family-medium);
+    font-weight: 300;
+}
+
+.chk-wrapper {
+    display: block;
+    width: 60px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;    
+}
+
+.chk-wrapper input[type="checkbox"] {
+    display: none;
+}
+
+.chk-wrapper input[type="checkbox"]:checked+.chk-slider {
+    background-color: var(--Marine-blue);
+}
+
+.chk-wrapper .chk-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Marine-blue);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.chk-wrapper .chk-knob {
+    position: absolute;
+    transition: all 300ms ease;
+    width: calc(25px - 6px);
+    height: calc(25px - 6px);
+    border-radius: 50%;
+    left: 3px;
+    top: 3px;
+    background-color: var(--White);
+    z-index: 1;
+}
+
+.chk-wrapper input[type="checkbox"]:checked+.chk-slider .chk-knob {
+    left: calc(100% - 19px - 3px);
+}
